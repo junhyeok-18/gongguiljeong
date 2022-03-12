@@ -1,5 +1,7 @@
 package kr.co.gongguiljeong.web;
 
+import kr.co.gongguiljeong.config.auth.LoginUser;
+import kr.co.gongguiljeong.config.auth.dto.SessionUser;
 import kr.co.gongguiljeong.service.posts.PostsService;
 import kr.co.gongguiljeong.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +17,12 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
         return "index";
     }
 
