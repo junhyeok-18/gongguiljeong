@@ -23,6 +23,6 @@ public class IndexControllerTest {
         String body = this.restTemplate.getForObject("/", String.class);
 
         //then
-        assertThat(body).contains("091정 프로젝트");
+        assertThat(body).contains("오늘");
     }
 }
