@@ -1,0 +1,30 @@
+{{>layout/admin-header}}
+
+<table style="border: 1px solid black;">
+    <thead>
+    <tr>
+        <th>카테고리 번호</th>
+        <th>카테고리 이름(한글)</th>
+        <th>카테고리 이름(영어)</th>
+        <th>카테고리 색상</th>
+        <th>카테고리 상태</th>
+        <th>카테고리 생성일</th>
+        <th>카테고리 수정일</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#category}}
+        <tr>
+            <td>{{category_code}}</td>
+            <td>{{category_name_kr}}</td>
+            <td>{{category_name_eng}}</td>
+            <td>{{category_color}}</td>
+            <td>{{category_state}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+    {{/category}}
+    </tbody>
+</table>
+
+{{>layout/admin-footer}}
