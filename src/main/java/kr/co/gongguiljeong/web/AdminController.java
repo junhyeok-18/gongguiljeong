@@ -20,7 +20,7 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String index(Model model) {
-       // model.addAttribute("category", categoryService.findAll());
+        model.addAttribute("category", categoryService.findAll());
         model.addAttribute("posts", postsService.findAllDesc());
 
         return "/admin/main";
