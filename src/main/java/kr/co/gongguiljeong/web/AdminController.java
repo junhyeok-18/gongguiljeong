@@ -21,7 +21,6 @@ public class AdminController {
     @GetMapping("/gongguiljeong-admin")
     public String index(Model model) {
         model.addAttribute("category", categoryService.findAll());
-        model.addAttribute("posts", postsService.findAllDesc());
 
         return "/admin/main";
     }

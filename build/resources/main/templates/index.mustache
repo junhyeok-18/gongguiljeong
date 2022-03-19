@@ -4,12 +4,12 @@
     <div class="header">
         <div id="menu">
             <div id="menu-navi">
-                <button type="button" class="btn-side"></button>
+                <button type="button" id="btn-sidebar" class="btn-sidebar"></button>
                 <button type="button" id="btn-today" class="move-day">Today</button>
                 <button type="button" id="btn-prev" class="move-day">전달</button>
                 <span id="renderRange" class="render-range">2022.03</span>
                 <button type="button" id="btn-next" class="move-day">담달</button>
-                <button type="button" class="btn-search"></button>
+                <button type="button" id="btn-search" class="btn-search"></button>
                 <input type="hidden" class="move-today" data-action="move-today">
                 <input type="hidden" class="move-prev" data-action="move-prev">
                 <input type="hidden" class="move-next" data-action="move-next">
@@ -20,6 +20,11 @@
     </div>
 
     <div class="div-today">오늘</div>
+
+    <div class="div-sidebar">
+
+    </div>
 </div>
+<div class="div-opacity"></div>
 
 {{>layout/footer}}

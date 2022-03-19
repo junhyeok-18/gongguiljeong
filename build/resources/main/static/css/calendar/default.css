@@ -84,6 +84,7 @@ html, body {
   margin: auto;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .div-today {
@@ -126,7 +127,7 @@ html, body {
   height: 92%;
 }
 
-.btn-side {
+.btn-sidebar {
   background: url( "/images/btn-ph.png" ) no-repeat;
   padding: 5%;
   margin-left: 3%;
@@ -139,6 +140,38 @@ html, body {
   float: right;
   margin-right: 3%;
 }
+
+.div-sidebar {
+  width: 0%;
+  height: 100%;
+  background-color: red;
+  transition-property: width;
+  transition-duration: 0.4s;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+
+.div-opacity {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0); /** 65% 불투명도 */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -9999;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+
+
+
+
+
+
 
 
 
@@ -359,40 +392,48 @@ html, body {
 
 /** 모바일 우선 개발(데스크탑에 최적화된 예외 CSS */
 @media (min-width: 900px) {
-  html, body {
-    font-weight: 500;
-    background-color: #333;
-  }
+    html, body {
+        font-weight: 500;
+        background-color: #333;
+    }
 
-  .div-main {
-    width: 900px;
-    margin: auto;
-  }
-  
-  .move-day {
-    padding: 0 16px;
-    line-height: 30px;
-    display: inline;
-    vertical-align: middle;
-  }
+    .div-main {
+        width: 900px;
+        margin: auto;
+    }
 
-  .div-today {
-    display: none;
-  }
+    .div-opacity {
+      width: 900px;
+      margin: auto;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-  .btn-side {
-    background: url( "/images/btn-pc.png" ) no-repeat;
-    padding: 3%;
-  }
+    .move-day {
+        padding: 0 16px;
+        line-height: 30px;
+        display: inline;
+        vertical-align: middle;
+    }
 
-  .btn-search {
-    background: url( "/images/btn-ph.png" ) no-repeat;
-    padding: 3%;
-  }
+    .div-today {
+        display: none;
+    }
 
-  #renderRange {
-    font-size: 4rem;
-    margin-left: 2%;
-    margin-right: 2%;
-  }
+    .btn-sidebar {
+        background: url( "/images/btn-pc.png" ) no-repeat;
+        padding: 3%;
+    }
+
+    .btn-search {
+        background: url( "/images/btn-ph.png" ) no-repeat;
+        padding: 3%;
+    }
+
+    #renderRange {
+        font-size: 4rem;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
 }
