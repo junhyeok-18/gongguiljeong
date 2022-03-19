@@ -61,6 +61,28 @@
       theme: MONTHLY_CUSTOM_THEME // set theme
     });
 
+    //사이드바 버튼 클릭
+    const sidebar = document.querySelector('.div-sidebar');
+
+    $('#btn-sidebar').on('click', function () {
+      $(".div-opacity").show();
+      $('.div-sidebar').show();
+      $('.div-sidebar').css('width', '70%');
+      $('.div-opacity').css('opacity', '0.65');
+      $('.div-opacity').css('z-index', '990');
+    });
+
+    //검색 버튼 클릭
+
+    //불투명 배경 클릭
+    $('.div-opacity').on('click', function () {
+      $(".div-opacity").hide();
+      $('.div-sidebar').hide();
+      $('.div-sidebar').css('width', '0%');
+      $('.div-opacity').css('opacity', '0');
+      $('.div-opacity').css('z-index', '-9900');
+    });
+
     //Today 버튼 및 오늘 div 클릭
     var save_today, real_today;
     let today = $("#renderRange");
