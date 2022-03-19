@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{status}}</title>
+</head>
+<body>
+{{status}} error page
+<p>timestamp : {{timestamp}}</p>
+<p>status : {{status}}</p>
+<p>error : {{error}}</p>
+{{#exception}}
+    <p>exception : {{exception}}</p>
+{{/exception}}
+{{^exception}}
+    <p>exception : 없음</p>
+{{/exception}}
+{{#message}}
+    <p>message : {{message}}</p>
+{{/message}}
+{{^message}}
+    <p>message : 없음</p>
+{{/message}}
+<p>path : {{path}}</p>
+</body>
+</html>

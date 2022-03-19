@@ -18,7 +18,7 @@ public class AdminController {
     private final CategoryService categoryService;
     private final PostsService postsService;
 
-    @GetMapping("/admin")
+    @GetMapping("/gongguiljeong-admin")
     public String index(Model model) {
         model.addAttribute("category", categoryService.findAll());
         model.addAttribute("posts", postsService.findAllDesc());
