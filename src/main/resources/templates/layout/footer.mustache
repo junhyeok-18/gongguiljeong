@@ -62,14 +62,13 @@
     });
 
     //사이드바 버튼 클릭
-    const sidebar = document.querySelector('.div-sidebar');
-
     $('#btn-sidebar').on('click', function () {
       $(".div-opacity").show();
       $('.div-sidebar').show();
-      $('.div-sidebar').css('width', '70%');
+      $('.div-sidebar').css('animation-duration', '0.3s');
       $('.div-opacity').css('opacity', '0.65');
       $('.div-opacity').css('z-index', '990');
+      $('.div-login').css('height', $('.div-login').width());
     });
 
     //검색 버튼 클릭
@@ -78,7 +77,6 @@
     $('.div-opacity').on('click', function () {
       $(".div-opacity").hide();
       $('.div-sidebar').hide();
-      $('.div-sidebar').css('width', '0%');
       $('.div-opacity').css('opacity', '0');
       $('.div-opacity').css('z-index', '-9900');
     });
