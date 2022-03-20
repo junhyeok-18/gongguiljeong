@@ -186,9 +186,9 @@ html, body {
 
 .div-login {
   width: 90%;
+  height: 10%;
   margin: auto;
   margin-top: 5%;
-
 }
 
 .btn-login {
@@ -222,7 +222,7 @@ html, body {
 
 .div-profile {
   width: 30%;
-  height: 30%;
+  height: 100%;
   float: left;
 }
 
@@ -233,10 +233,8 @@ html, body {
 
 .div-userinfo {
   width: 70%;
-  height: 30%;
+  height: 100%;
   float: left;
-  display: flex;
-  align-items: center;
 }
 
 .span-username {
@@ -261,8 +259,7 @@ html, body {
 
 .div-setting {
   width: 100%;
-  position: absolute;
-  top: 13%;
+  margin-top: 5%;
   font-size: 2rem;
   color: #525252;
   font-weight: 300;
@@ -294,55 +291,55 @@ html, body {
   cursor: pointer;
 }
 /** 토글 버튼 css */
-.switch-button {
-  position: relative;
-  display: inline-block;
-  width: 80%;
-  height: 100%;
-}
+.switch-button { 
+  position: relative; 
+  display: inline-block; 
+  width: 80%; 
+  height: 100%; 
+} 
 
-.switch-button input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.switch-button input { 
+  opacity: 0; 
+  width: 0; 
+  height: 0; 
+} 
 
-.onoff-switch {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
+.onoff-switch { 
+  position: absolute; 
+  cursor: pointer; 
+  top: 0; 
+  left: 0; 
   right: 0;
-  bottom: 0;
-  border-radius:20px;
-  background-color: #ccc;
-  box-shadow: inset 1px 5px 1px #999;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  bottom: 0; 
+  border-radius:20px; 
+  background-color: #ccc; 
+  box-shadow: inset 1px 5px 1px #999; 
+  -webkit-transition: .4s; 
+  transition: .4s; 
+} 
 
-.onoff-switch:before {
-  position: absolute;
-  content: "";
-  height: 70%;
-  width: 35%;
-  left: 10%;
-  top: 15%;
-  background-color: #fff;
-  -webkit-transition: .5s;
-  transition: .4s;
-  border-radius: 50%;
-}
+.onoff-switch:before { 
+  position: absolute; 
+  content: ""; 
+  height: 70%; 
+  width: 35%; 
+  left: 10%; 
+  top: 15%; 
+  background-color: #fff; 
+  -webkit-transition: .5s; 
+  transition: .4s; 
+  border-radius: 50%; 
+} 
 
-.switch-button input:checked + .onoff-switch {
-  background-color: #d78bee;
-  box-shadow: inset 1px 5px 1px #741292;
-}
+.switch-button input:checked + .onoff-switch { 
+  background-color: #D548EB;
+  box-shadow: inset 1px 5px 1px #BD45EE;
+} 
 
-.switch-button input:checked + .onoff-switch:before {
-  -webkit-transform: translateX(130%);
-  -ms-transform: translateX(130%);
-  transform: translateX(130%);
+.switch-button input:checked + .onoff-switch:before { 
+  -webkit-transform: translateX(130%); 
+  -ms-transform: translateX(130%); 
+  transform: translateX(130%); 
 }
 /** 토글 버튼 css 종료 */
 
@@ -591,7 +588,7 @@ html, body {
     width: 900px;
     margin: auto;
   }
-
+  
   .div-opacity {
     width: 900px;
     margin: auto;
@@ -639,33 +636,31 @@ html, body {
 
   .div-profile {
     width: 20%;
-    height: 20%;
+    height: 100%;
     float: left;
   }
-
+  
   .img-profile {
     width: 100%;
     border-radius: 50%;
   }
-
+  
   .div-userinfo {
     width: 80%;
-    height: 20%;
+    height: 100%;
     float: left;
-    display: flex;
-    align-items: center;
   }
-
+  
   .span-username {
     font-size: 6rem;
   }
-
+  
   .span-useremail {
     font-size: 2rem;
   }
 
   .div-setting {
-    top: 20%;
+    margin-top: 10%;
   }
 
   .switch-button {
