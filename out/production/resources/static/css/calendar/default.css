@@ -80,6 +80,10 @@ html, body {
   height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .div-main {
   margin: auto;
   width: 100%;
@@ -151,10 +155,12 @@ html, body {
 
 @keyframes fadeInLeft {
   0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
 
   to {
+    -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
 }
@@ -166,6 +172,7 @@ html, body {
   position: absolute;
   top: 0;
   z-index: 999;
+  -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
   display: none;
 }
@@ -180,7 +187,9 @@ html, body {
   margin: 0;
   padding: 0;
   z-index: -9999;
+  -webkit-transition-property: opacity;
   transition-property: opacity;
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
@@ -207,7 +216,7 @@ html, body {
 }
 
 .img-logo {
-  width: 25%;
+  width: 20%;
   margin: auto;
   display: block;
 }
@@ -221,7 +230,7 @@ html, body {
 }
 
 .div-profile {
-  width: 30%;
+  width: 25%;
   height: 100%;
   float: left;
 }
@@ -326,7 +335,7 @@ html, body {
   left: 10%; 
   top: 15%; 
   background-color: #fff; 
-  -webkit-transition: .5s; 
+  -webkit-transition: .4s;
   transition: .4s; 
   border-radius: 50%; 
 } 
