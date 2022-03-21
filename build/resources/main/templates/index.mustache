@@ -22,7 +22,64 @@
     <div class="div-today">오늘</div>
 
     <div class="div-sidebar">
-
+        <div class="div-login">
+            {{^userName}}
+                <a href="/oauth2/authorization/kakao">
+                    <img src="/images/btn-login.png" class="btn-login">
+                </a>
+        </div>
+            {{/userName}}
+            {{#userName}}
+                <div class="div-profile">
+                    <img class="img-profile" src="{{userPicture}}">
+                </div>
+                <div class="div-userinfo">
+                    <div style="width: 100%;">
+                        <span class="span-username">{{userName}}</span>
+                        <span class="span-useremail">{{userEmail}}</span>
+                    </div>
+                </div>
+        </div>
+                <div class="div-setting">
+                    <div class="div-setting-left">내 알림</div>
+                    <div class="div-setting-right">
+                        <label class="switch-button">
+                            <input type="checkbox"/>
+                            <span class="onoff-switch"></span>
+                        </label>
+                    </div>
+                    <div class="div-setting-left">하루 전 알림</div>
+                    <div class="div-setting-right">
+                        <label class="switch-button">
+                            <input type="checkbox"/>
+                            <span class="onoff-switch"></span>
+                        </label>
+                    </div>
+                    <div class="div-setting-left">10분 전 알림</div>
+                    <div class="div-setting-right">
+                        <label class="switch-button">
+                            <input type="checkbox"/>
+                            <span class="onoff-switch"></span>
+                        </label>
+                    </div>
+                    <div class="div-setting-left setting-top">내 카테고리(10)</div>
+                    <div class="div-setting-right setting-top">+</div>
+                    <div class="div-setting-left">내 브랜드(65)</div>
+                    <div class="div-setting-right">+</div>
+                    <div class="div-setting-left">내 인플루언서(111)</div>
+                    <div class="div-setting-right">+</div>
+                    <div class="div-setting-left setting-top">
+                        <a href="/logout">
+                            <span class="span-logout">로그아웃</span>
+                        </a>
+                    </div>
+                    <div class="div-setting-right setting-top"></div>
+                </div>
+            {{/userName}}
+        <div class="div-footer">
+            <img src="./images/logo.png" class="img-logo">
+            <span class="span-copyright">Copyright 2022. Gongguiljeong All rights reserved</span>
+        </div>
     </div>
 </div>
 <div class="div-opacity"></div>

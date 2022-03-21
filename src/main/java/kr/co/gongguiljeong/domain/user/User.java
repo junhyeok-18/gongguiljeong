@@ -4,6 +4,8 @@ import kr.co.gongguiljeong.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 
@@ -14,37 +16,43 @@ public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userCode;
 
     @Column(nullable = false)
-    private String name;
+    private String userName;
 
     @Column(nullable = false)
-    private String email;
+    private String userEmail;
 
     @Column
-    private String picture;
+    private String userProfileImage;
+
+    @Column
+    private String userNotification;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
+    private Role userRole;
 
     @Builder
-    public User(String name, String email, String picture, Role role) {
-        this.name = name;
-        this.email = email;
-        this.picture = picture;
-        this.role = role;
+    public User(Long userCode, String userName, String userEmail, String userProfileImage, String userNotification, Role userRole) {
+        this.userCode = userCode;
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userProfileImage = userProfileImage;
+        this.userNotification = userNotification;
+        this.userRole = userRole;
     }
 
-    public User update(String name, String picture) {
-        this.name = name;
-        this.picture = picture;
+    public User update(String userName, String userProfileImage, String userNotification) {
+        this.userName = userName;
+        this.userProfileImage = userProfileImage;
+        this.userNotification = userNotification;
 
         return this;
     }
 
     public String getRoleKey() {
-        return this.role.getKey();
+        return this.userRole.getKey();
     }
 }

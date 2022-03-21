@@ -18,11 +18,15 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("posts", postsService.findAllDesc());
+        //model.addAttribute("posts", postsService.findAllDesc());
         if (user != null) {
-            model.addAttribute("userPicture", user.getPicture());
-            model.addAttribute("userName", user.getName());
-            model.addAttribute("userEmail", user.getEmail());
+            model.addAttribute("userCode", user.getUserCode());
+            model.addAttribute("loginUserName", user.getUserName());
+            model.addAttribute("userEmail", user.getUserEmail());
+            model.addAttribute("userProfileImage", user.getUserProfileImage());
+            model.addAttribute("userNotification", user.getUserNotification());
+
+            System.out.println("userNotification : " +  user.getUserNotification());
         }
 
         return "index";

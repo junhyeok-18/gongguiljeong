@@ -23,25 +23,25 @@
 
     <div class="div-sidebar">
         <div class="div-login">
-            {{^userName}}
+            {{^loginUserName}}
                 <a href="/oauth2/authorization/kakao">
                     <img src="/images/btn-login.png" class="btn-login">
                 </a>
         </div>
-            {{/userName}}
-            {{#userName}}
+            {{/loginUserName}}
+            {{#loginUserName}}
                 <div class="div-profile">
-                    <img class="img-profile" src="{{userPicture}}">
+                    <img class="img-profile" src="{{userProfileImage}}">
                 </div>
                 <div class="div-userinfo">
                     <div style="width: 100%;">
-                        <span class="span-username">{{userName}}</span>
+                        <span class="span-username">{{userCode}}{{loginUserName}}</span>
                         <span class="span-useremail">{{userEmail}}</span>
                     </div>
                 </div>
         </div>
                 <div class="div-setting">
-                    <div class="div-setting-left">내 알림</div>
+                    <div class="div-setting-left">{{userNotification}}내 알림</div>
                     <div class="div-setting-right">
                         <label class="switch-button">
                             <input type="checkbox"/>
@@ -75,7 +75,9 @@
                     </div>
                     <div class="div-setting-right setting-top"></div>
                 </div>
-            {{/userName}}
+                <input type="hidden" id="userCode" value="{{userCode}}">
+                <input type="hidden" id="userNotification" value="{{userNotification}}">
+            {{/loginUserName}}
         <div class="div-footer">
             <img src="./images/logo.png" class="img-logo">
             <span class="span-copyright">Copyright 2022. Gongguiljeong All rights reserved</span>

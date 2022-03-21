@@ -80,6 +80,10 @@ html, body {
   height: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .div-main {
   margin: auto;
   width: 100%;
@@ -103,7 +107,7 @@ html, body {
 }
 
 #menu {
-  background-color: #005aff;
+  background-color: #fff;
   width: 100%;
   height: 7.93431%;
   position: relative;
@@ -128,28 +132,49 @@ html, body {
 }
 
 .btn-sidebar {
-  background: url( "/images/btn-ph.png" ) no-repeat;
-  padding: 5%;
+  background: url( "/images/btn-sidebar.png" ) no-repeat;
+  padding: 4%;
   margin-left: 3%;
   margin-right: 4%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-size: contain;
 }
 
 .btn-search {
-  background: url( "/images/btn-pc.png" ) no-repeat;
-  padding: 5%;
+  background: url( "/images/btn-search.png" ) no-repeat;
+  padding: 4%;
   float: right;
   margin-right: 3%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-size: contain;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
 }
 
 .div-sidebar {
-  width: 0%;
+  width: 70%;
   height: 100%;
-  background-color: red;
-  transition-property: width;
-  transition-duration: 0.4s;
+  background-color: #fff;
   position: absolute;
   top: 0;
   z-index: 999;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  display: none;
 }
 
 .div-opacity {
@@ -162,9 +187,180 @@ html, body {
   margin: 0;
   padding: 0;
   z-index: -9999;
+  -webkit-transition-property: opacity;
   transition-property: opacity;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
+
+.div-login {
+  width: 90%;
+  height: 10%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.btn-login {
+  width: 100%;
+  cursor: pointer;
+}
+
+.div-footer {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  background-color: #F9FAFC;
+  border-top: #CCCCCC solid 0.5px;
+  text-align: center;
+}
+
+.img-logo {
+  width: 20%;
+  margin: auto;
+  display: block;
+}
+
+.span-copyright {
+  width: 100%;
+  display: block;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #757474;
+}
+
+.div-profile {
+  width: 25%;
+  height: 100%;
+  float: left;
+}
+
+.img-profile {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.div-userinfo {
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+
+.span-username {
+  width: 95%;
+  text-align: left;
+  margin-left: 5%;
+  display: block;
+  font-size: 3rem;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.span-useremail {
+  width: 95%;
+  text-align: left;
+  margin-left: 5%;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+.div-setting {
+  width: 100%;
+  margin-top: 5%;
+  font-size: 2rem;
+  color: #525252;
+  font-weight: 300;
+}
+
+.div-setting-left {
+  float: left;
+  margin-left: 7%;
+  width: 63%;
+  text-align: left;
+  padding-bottom: 5%;
+}
+
+.div-setting-right {
+  float: right;
+  margin-right: 7%;
+  width: 23%;
+  text-align: right;
+  padding-bottom: 5%;
+}
+
+.setting-top {
+  padding-top: 5%;
+  border-top: #CCCCCC solid 1px;
+}
+
+.span-logout {
+  color: #f51313;
+  cursor: pointer;
+}
+/** 토글 버튼 css */
+.switch-button { 
+  position: relative; 
+  display: inline-block; 
+  width: 80%; 
+  height: 100%; 
+} 
+
+.switch-button input { 
+  opacity: 0; 
+  width: 0; 
+  height: 0; 
+} 
+
+.onoff-switch { 
+  position: absolute; 
+  cursor: pointer; 
+  top: 0; 
+  left: 0; 
+  right: 0;
+  bottom: 0; 
+  border-radius:20px; 
+  background-color: #ccc; 
+  box-shadow: inset 1px 5px 1px #999; 
+  -webkit-transition: .4s; 
+  transition: .4s; 
+} 
+
+.onoff-switch:before { 
+  position: absolute; 
+  content: ""; 
+  height: 70%; 
+  width: 35%; 
+  left: 10%; 
+  top: 15%; 
+  background-color: #fff; 
+  -webkit-transition: .4s;
+  transition: .4s; 
+  border-radius: 50%; 
+} 
+
+.switch-button input:checked + .onoff-switch { 
+  background-color: #D548EB;
+  box-shadow: inset 1px 5px 1px #BD45EE;
+} 
+
+.switch-button input:checked + .onoff-switch:before { 
+  -webkit-transform: translateX(130%); 
+  -ms-transform: translateX(130%); 
+  transform: translateX(130%); 
+}
+/** 토글 버튼 css 종료 */
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -392,48 +588,91 @@ html, body {
 
 /** 모바일 우선 개발(데스크탑에 최적화된 예외 CSS */
 @media (min-width: 900px) {
-    html, body {
-        font-weight: 500;
-        background-color: #333;
-    }
+  html, body {
+    font-weight: 500;
+    background-color: #333;
+  }
 
-    .div-main {
-        width: 900px;
-        margin: auto;
-    }
+  .div-main {
+    width: 900px;
+    margin: auto;
+  }
+  
+  .div-opacity {
+    width: 900px;
+    margin: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-    .div-opacity {
-      width: 900px;
-      margin: auto;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  .move-day {
+    padding: 0 16px;
+    line-height: 30px;
+    display: inline;
+    vertical-align: middle;
+  }
 
-    .move-day {
-        padding: 0 16px;
-        line-height: 30px;
-        display: inline;
-        vertical-align: middle;
-    }
+  .div-today {
+    display: none;
+  }
 
-    .div-today {
-        display: none;
-    }
+  .btn-sidebar {
+    background: url( "/images/btn-sidebar.png" ) no-repeat;
+    padding: 3%;
+    background-size: contain;
+  }
 
-    .btn-sidebar {
-        background: url( "/images/btn-pc.png" ) no-repeat;
-        padding: 3%;
-    }
+  .btn-search {
+    background: url( "/images/btn-search.png" ) no-repeat;
+    padding: 3%;
+    background-size: contain;
+  }
 
-    .btn-search {
-        background: url( "/images/btn-ph.png" ) no-repeat;
-        padding: 3%;
-    }
+  #renderRange {
+    font-size: 4rem;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
 
-    #renderRange {
-        font-size: 4rem;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
+  .div-copyright {
+    font-size: 2rem;
+  }
+
+  .img-logo {
+    width: 75px;
+  }
+
+  .div-profile {
+    width: 20%;
+    height: 100%;
+    float: left;
+  }
+  
+  .img-profile {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .div-userinfo {
+    width: 80%;
+    height: 100%;
+    float: left;
+  }
+  
+  .span-username {
+    font-size: 6rem;
+  }
+  
+  .span-useremail {
+    font-size: 2rem;
+  }
+
+  .div-setting {
+    margin-top: 10%;
+  }
+
+  .switch-button {
+    width: 35%;
+  }
 }

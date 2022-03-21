@@ -16,12 +16,16 @@ public class Category extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long category_code;
 
+    @Column(nullable = false)
     private String category_name_kr;
 
+    @Column(nullable = false)
     private String category_name_eng;
 
+    @Column(nullable = false)
     private String category_color;
 
+    @Column(nullable = false)
     private String category_state;
 
     @Builder

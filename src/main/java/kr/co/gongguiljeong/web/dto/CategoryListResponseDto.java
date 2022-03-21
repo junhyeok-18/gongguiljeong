@@ -12,8 +12,8 @@ public class CategoryListResponseDto {
     private String category_name_eng;
     private String category_color;
     private String category_state;
-    private LocalDateTime createdDate;
-    private LocalDateTime modifiedDate;
+    private LocalDateTime created_date;
+    private LocalDateTime modified_date;
 
     public CategoryListResponseDto(Category entity) {
         this.category_code = entity.getCategory_code();
@@ -21,7 +21,7 @@ public class CategoryListResponseDto {
         this.category_name_eng = entity.getCategory_name_eng();
         this.category_color = entity.getCategory_color();
         this.category_state = entity.getCategory_state();
-        this.createdDate = entity.getCreatedDate();
-        this.modifiedDate = entity.getModifiedDate();
+        this.created_date = entity.getCreatedDate();
+        this.modified_date = entity.getModifiedDate();
     }
 }
