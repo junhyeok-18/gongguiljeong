@@ -1,0 +1,56 @@
+{{>layout/admin-header}}
+
+<a href="/gongguiljeong-admin">
+    <button type="button">홈</button>
+</a>
+<a href="/schedule/save">
+    <button type="button">추가</button>
+</a>
+<br/><br/>
+<table style="border: 1px solid black;">
+    <thead>
+    <tr>
+        <th>공구일정 번호</th>
+        <th>공구일정 등록한 사람</th>
+        <th>공구일정 등록한 사람 권한</th>
+        <th>공구일정 카테고리</th>
+        <th>공구일정 브랜드</th>
+        <th>공구일정 인플루언서</th>
+        <th>공구일정 시작날짜</th>
+        <th>공구일정 종료날짜</th>
+        <th>공구일정 상태</th>
+        <th>공구일정 생성일</th>
+        <th>공구일정 수정일</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#schedule}}
+        <tr>
+            <td>
+                <a href="/schedule/update/{{scheduleCode}}">
+                    {{scheduleCode}}
+                </a>
+            </td>
+            <td>{{scheduleRegisteredPerson}}</td>
+            <td>ADMIN</td>
+            <td>{{scheduleCategory}}</td>
+            <td>{{scheduleBrand}}</td>
+            <td>{{scheduleInfluencer}}</td>
+            <td>{{scheduleStartDate}}</td>
+            <td>{{scheduleEndDate}}</td>
+            <td>{{scheduleState}}</td>
+            <td>{{createdDate}}</td>
+            <td>
+                {{#modifiedDate}}
+                    {{modifiedDate}}
+                {{/modifiedDate}}
+                {{^modifiedDate}}
+
+                {{/modifiedDate}}
+            </td>
+        </tr>
+    {{/schedule}}
+    </tbody>
+</table>
+
+{{>layout/admin-footer}}

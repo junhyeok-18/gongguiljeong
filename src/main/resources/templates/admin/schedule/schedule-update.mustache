@@ -1,0 +1,61 @@
+{{>layout/admin-header}}
+
+<table style="border: 1px solid black;">
+    <tr>
+        <th>공구일정 번호</th>
+        <td>
+            <input type="text" id="scheduleCode" value="{{schedule.scheduleCode}}" readonly>
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 등록한 사람</th>
+        <td>
+            <input type="text" id="scheduleRegisteredPerson" value="{{schedule.scheduleRegisteredPerson}}" readonly>
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 카테고리</th>
+        <td>
+            <input type="text" id="scheduleCategory" value="{{schedule.scheduleCategory}}">
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 브랜드</th>
+        <td>
+            <input type="text" id="scheduleBrand" value="{{schedule.scheduleBrand}}">
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 인플루언서</th>
+        <td>
+            <input type="text" id="scheduleInfluencer" value="{{schedule.scheduleInfluencer}}">
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 시작날짜</th>
+        <td>
+            <input type="text" id="scheduleStartDate" value="{{schedule.scheduleStartDate}}" maxlength="12">
+        </td>
+    </tr>
+    <tr>
+        <th>공구일정 종료날짜</th>
+        <td>
+            <input type="text" id="scheduleEndDate" value="{{schedule.scheduleEndDate}}" maxlength="12">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" id="btn-cancel" value="schedule">취소</button>
+        </td>
+        <td>
+            <button type="button" id="btn-update" value="schedule">수정</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" id="btn-delete" value="schedule">삭제</button>
+        </td>
+    </tr>
+</table>
+
+{{>layout/admin-footer}}

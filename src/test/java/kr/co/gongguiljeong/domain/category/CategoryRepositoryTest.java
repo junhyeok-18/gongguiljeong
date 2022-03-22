@@ -25,16 +25,16 @@ public class CategoryRepositoryTest {
     @Test
     public void 카테고리저장_불러오기() {
         //given
-        String category_name_kr = "카테고리 한글명";
-        String category_name_eng = "카테고리 영문명";
-        String category_color = "카테고리 색상";
-        String category_state = "카테고리 상태";
+        String categoryNameKr = "카테고리 한글명";
+        String categoryNameEng = "카테고리 영문명";
+        String categoryColor = "카테고리 색상";
+        String categoryState = "카테고리 상태";
 
         categoryRepository.save(Category.builder()
-                .category_name_kr(category_name_kr)
-                .category_name_eng(category_name_eng)
-                .category_color(category_color)
-                .category_state(category_state)
+                .categoryNameKr(categoryNameKr)
+                .categoryNameEng(categoryNameEng)
+                .categoryColor(categoryColor)
+                .categoryState(categoryState)
                 .build());
 
         //when
@@ -42,9 +42,9 @@ public class CategoryRepositoryTest {
 
         //then
         Category category = categoryList.get(0);
-        assertThat(category.getCategory_name_kr()).isEqualTo(category_name_kr);
-        assertThat(category.getCategory_name_eng()).isEqualTo(category_name_eng);
-        assertThat(category.getCategory_color()).isEqualTo(category_color);
-        assertThat(category.getCategory_state()).isEqualTo(category_state);
+        assertThat(category.getCategoryNameKr()).isEqualTo(categoryNameKr);
+        assertThat(category.getCategoryNameEng()).isEqualTo(categoryNameEng);
+        assertThat(category.getCategoryColor()).isEqualTo(categoryColor);
+        assertThat(category.getCategoryState()).isEqualTo(categoryState);
     }
 }

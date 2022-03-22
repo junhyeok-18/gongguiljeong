@@ -2,10 +2,10 @@ package kr.co.gongguiljeong.service.category;
 
 import kr.co.gongguiljeong.domain.category.Category;
 import kr.co.gongguiljeong.domain.category.CategoryRepository;
-import kr.co.gongguiljeong.web.dto.CategoryListResponseDto;
-import kr.co.gongguiljeong.web.dto.CategoryResponseDto;
-import kr.co.gongguiljeong.web.dto.CategorySaveRequestDto;
-import kr.co.gongguiljeong.web.dto.CategoryUpdateRequestDto;
+import kr.co.gongguiljeong.web.dto.category.CategoryListResponseDto;
+import kr.co.gongguiljeong.web.dto.category.CategoryResponseDto;
+import kr.co.gongguiljeong.web.dto.category.CategorySaveRequestDto;
+import kr.co.gongguiljeong.web.dto.category.CategoryUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

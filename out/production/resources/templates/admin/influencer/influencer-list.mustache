@@ -1,0 +1,52 @@
+{{>layout/admin-header}}
+
+<a href="/gongguiljeong-admin">
+    <button type="button">홈</button>
+</a>
+<a href="/influencer/save">
+    <button type="button">추가</button>
+</a>
+<br/><br/>
+<table style="border: 1px solid black;">
+    <thead>
+    <tr>
+        <th>인플루언서 번호</th>
+        <th>인플루언서 이름(한글)</th>
+        <th>인플루언서 이름(영어)</th>
+        <th>인플루언서 색상</th>
+        <th>인플루언서 소개글</th>
+        <th>인플루언서 링크</th>
+        <th>인플루언서 상태</th>
+        <th>인플루언서 생성일</th>
+        <th>인플루언서 수정일</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#influencer}}
+        <tr>
+            <td>
+                <a href="/influencer/update/{{influencerCode}}">
+                    {{influencerCode}}
+                </a>
+            </td>
+            <td>{{influencerNameKr}}</td>
+            <td>{{influencerNameEng}}</td>
+            <td>{{influencerColor}}</td>
+            <td>{{influencerIntroduction}}</td>
+            <td>{{influencerLink}}</td>
+            <td>{{influencerState}}</td>
+            <td>{{createdDate}}</td>
+            <td>
+                {{#modifiedDate}}
+                    {{modifiedDate}}
+                {{/modifiedDate}}
+                {{^modifiedDate}}
+
+                {{/modifiedDate}}
+            </td>
+        </tr>
+    {{/influencer}}
+    </tbody>
+</table>
+
+{{>layout/admin-footer}}

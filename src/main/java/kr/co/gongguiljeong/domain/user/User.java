@@ -27,7 +27,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String userProfileImage;
 
-    @Column(nullable = false, columnDefinition = "default 'N'")
+    @Column(nullable = false)
     private String userNotification;
 
     @Enumerated(EnumType.STRING)

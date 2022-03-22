@@ -2,29 +2,40 @@
 
 <table style="border: 1px solid black;">
     <tr>
+        <th>카테고리 번호</th>
+        <td>
+            <input type="text" id="categoryCode" value="{{category.categoryCode}}" readonly>
+        </td>
+    </tr>
+    <tr>
         <th>카테고리 이름(한글)</th>
         <td>
-            <input type="text" id="categoryNameKr">
+            <input type="text" id="categoryNameKr" value="{{category.categoryNameKr}}">
         </td>
     </tr>
     <tr>
         <th>카테고리 이름(영어)</th>
         <td>
-            <input type="text" id="categoryNameEng">
+            <input type="text" id="categoryNameEng" value="{{category.categoryNameEng}}">
         </td>
     </tr>
     <tr>
         <th>카테고리 색상</th>
         <td>
-            <input type="text" id="categoryColor">
+            <input type="text" id="categoryColor" value="{{category.categoryColor}}">
         </td>
     </tr>
     <tr>
         <td>
-            <button type="button" id="btn-cancel">취소</button>
+            <button type="button" id="btn-cancel" value="category">취소</button>
         </td>
         <td>
-            <button type="button" id="btn-save">등록</button>
+            <button type="button" id="btn-update" value="category">수정</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" id="btn-delete" value="category">삭제</button>
         </td>
     </tr>
 </table>

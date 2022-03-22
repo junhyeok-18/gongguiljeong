@@ -1,0 +1,55 @@
+{{>layout/admin-header}}
+
+<table style="border: 1px solid black;">
+    <tr>
+        <th>인플루언서 번호</th>
+        <td>
+            <input type="text" id="influencerCode" value="{{influencer.influencerCode}}" readonly>
+        </td>
+    </tr>
+    <tr>
+        <th>인플루언서 이름(한글)</th>
+        <td>
+            <input type="text" id="influencerNameKr" value="{{influencer.influencerNameKr}}">
+        </td>
+    </tr>
+    <tr>
+        <th>인플루언서 이름(영어)</th>
+        <td>
+            <input type="text" id="influencerNameEng" value="{{influencer.influencerNameEng}}">
+        </td>
+    </tr>
+    <tr>
+        <th>인플루언서 색상</th>
+        <td>
+            <input type="text" id="influencerColor" value="{{influencer.influencerColor}}">
+        </td>
+    </tr>
+    <tr>
+        <th>인플루언서 소개글</th>
+        <td>
+            <input type="text" id="influencerIntroduction" value="{{influencer.influencerIntroduction}}">
+        </td>
+    </tr>
+    <tr>
+        <th>인플루언서 링크</th>
+        <td>
+            <input type="text" id="influencerLink" value="{{influencer.influencerLink}}">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" id="btn-cancel" value="influencer">취소</button>
+        </td>
+        <td>
+            <button type="button" id="btn-update" value="influencer">수정</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" id="btn-delete" value="influencer">삭제</button>
+        </td>
+    </tr>
+</table>
+
+{{>layout/admin-footer}}

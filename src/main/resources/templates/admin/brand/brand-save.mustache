@@ -1,0 +1,44 @@
+{{>layout/admin-header}}
+
+<table style="border: 1px solid black;">
+    <tr>
+        <th>브랜드 이름(한글)</th>
+        <td>
+            <input type="text" id="brandNameKr">
+        </td>
+    </tr>
+    <tr>
+        <th>브랜드 이름(영어)</th>
+        <td>
+            <input type="text" id="brandNameEng">
+        </td>
+    </tr>
+    <tr>
+        <th>브랜드 색상</th>
+        <td>
+            <input type="text" id="brandColor">
+        </td>
+    </tr>
+    <tr>
+        <th>브랜드 소개글</th>
+        <td>
+            <input type="text" id="brandIntroduction">
+        </td>
+    </tr>
+    <tr>
+        <th>브랜드 링크</th>
+        <td>
+            <input type="text" id="brandLink">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" id="btn-cancel" value="brand">취소</button>
+        </td>
+        <td>
+            <button type="button" id="btn-save" value="brand">등록</button>
+        </td>
+    </tr>
+</table>
+
+{{>layout/admin-footer}}
