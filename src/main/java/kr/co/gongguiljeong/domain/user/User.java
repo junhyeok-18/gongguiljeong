@@ -27,7 +27,7 @@ public class User extends BaseTimeEntity {
     @Column
     private String userProfileImage;
 
-    @Column
+    @Column(nullable = false, columnDefinition = "default 'N'")
     private String userNotification;
 
     @Enumerated(EnumType.STRING)
@@ -44,10 +44,9 @@ public class User extends BaseTimeEntity {
         this.userRole = userRole;
     }
 
-    public User update(String userName, String userProfileImage, String userNotification) {
+    public User update(String userName, String userProfileImage) {
         this.userName = userName;
         this.userProfileImage = userProfileImage;
-        this.userNotification = userNotification;
 
         return this;
     }

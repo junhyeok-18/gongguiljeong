@@ -41,7 +41,7 @@
                 </div>
         </div>
                 <div class="div-setting">
-                    <div class="div-setting-left">{{userNotification}}내 알림</div>
+                    <div class="div-setting-left">{{^userNotification}}N {{/userNotification}}내 알림</div>
                     <div class="div-setting-right">
                         <label class="switch-button">
                             <input type="checkbox"/>
@@ -76,7 +76,7 @@
                     <div class="div-setting-right setting-top"></div>
                 </div>
                 <input type="hidden" id="userCode" value="{{userCode}}">
-                <input type="hidden" id="userNotification" value="{{userNotification}}">
+                <input type="hidden" id="userNotification" value="{{^userNotification}}N{{/userNotification}}">
             {{/loginUserName}}
         <div class="div-footer">
             <img src="./images/logo.png" class="img-logo">

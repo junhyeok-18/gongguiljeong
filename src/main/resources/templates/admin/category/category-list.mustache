@@ -1,5 +1,9 @@
 {{>layout/admin-header}}
 
+<a href="/category/save">
+    <button type="button">추가</button>
+</a>
+
 <table style="border: 1px solid black;">
     <thead>
     <tr>
@@ -15,19 +19,23 @@
     <tbody>
     {{#category}}
         <tr>
-            <td>{{category_code}}</td>
-            <td>{{category_name_kr}}</td>
-            <td>{{category_name_eng}}</td>
-            <td>{{category_color}}</td>
-            <td>{{category_state}}</td>
-            <td>{{created_date}}</td>
             <td>
-                {{#modified_date}}
-                    {{modified_date}}
-                {{/modified_date}}
-                {{^modified_date}}
+                <a href="/category/update/{{categoryCode}}">
+                    {{categoryCode}}
+                </a>
+            </td>
+            <td>{{categoryNameKr}}</td>
+            <td>{{categoryNameEng}}</td>
+            <td>{{categoryColor}}</td>
+            <td>{{categoryState}}</td>
+            <td>{{createdDate}}</td>
+            <td>
+                {{#modifiedDate}}
+                    {{modifiedDate}}
+                {{/modifiedDate}}
+                {{^modifiedDate}}
 
-                {{/modified_date}}
+                {{/modifiedDate}}
             </td>
         </tr>
     {{/category}}

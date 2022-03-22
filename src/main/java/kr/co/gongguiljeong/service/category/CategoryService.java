@@ -20,34 +20,34 @@ public class CategoryService {
 
     @Transactional
     public Long save(CategorySaveRequestDto requestDto) {
-        return categoryRepository.save(requestDto.toEntity()).getCategory_code();
+        return categoryRepository.save(requestDto.toEntity()).getCategoryCode();
     }
 
     @Transactional
-    public Long update(Long category_code, CategoryUpdateRequestDto requestDto) {
-        Category category = categoryRepository.findById(category_code)
-                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + category_code)));
+    public Long update(Long categoryCode, CategoryUpdateRequestDto requestDto) {
+        Category category = categoryRepository.findById(categoryCode)
+                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + categoryCode)));
 
-        category.update(requestDto.getCategory_name_kr(),
-                        requestDto.getCategory_name_eng(),
-                        requestDto.getCategory_color(),
-                        requestDto.getCategory_state());
+        category.update(requestDto.getCategoryNameKr(),
+                        requestDto.getCategoryNameEng(),
+                        requestDto.getCategoryColor(),
+                        requestDto.getCategoryState());
 
-        return category_code;
+        return categoryCode;
     }
 
     @Transactional
-    public void delete(Long category_code) {
-        Category category = categoryRepository.findById(category_code)
-                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + category_code)));
+    public void delete(Long categoryCode) {
+        Category category = categoryRepository.findById(categoryCode)
+                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + categoryCode)));
 
         categoryRepository.delete(category);
     }
 
     @Transactional(readOnly = true)
-    public CategoryResponseDto findById(Long category_code) {
-        Category entity = categoryRepository.findById(category_code)
-                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + category_code)));
+    public CategoryResponseDto findById(Long categoryCode) {
+        Category entity = categoryRepository.findById(categoryCode)
+                .orElseThrow(() -> new IllegalArgumentException(("해당 카테고리가 없습니다. category_code = " + categoryCode)));
 
         return new CategoryResponseDto(entity);
     }

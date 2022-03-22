@@ -14,32 +14,32 @@ public class Category extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long category_code;
+    private Long categoryCode;
 
     @Column(nullable = false)
-    private String category_name_kr;
+    private String categoryNameKr;
 
     @Column(nullable = false)
-    private String category_name_eng;
+    private String categoryNameEng;
 
     @Column(nullable = false)
-    private String category_color;
+    private String categoryColor;
 
     @Column(nullable = false)
-    private String category_state;
+    private String categoryState;
 
     @Builder
-    public Category(String category_name_kr, String category_name_eng, String category_color, String category_state) {
-        this.category_name_kr = category_name_kr;
-        this.category_name_eng = category_name_eng;
-        this.category_color = category_color;
-        this.category_state = category_state;
+    public Category(String categoryNameKr, String categoryNameEng, String categoryColor, String categoryState) {
+        this.categoryNameKr = categoryNameKr;
+        this.categoryNameEng = categoryNameEng;
+        this.categoryColor = categoryColor;
+        this.categoryState = categoryState;
     }
 
-    public void update(String category_name_kr, String category_name_eng, String category_color, String category_state) {
-        this.category_name_kr = category_name_kr;
-        this.category_name_eng = category_name_eng;
-        this.category_color = category_color;
-        this.category_state = category_state;
+    public void update(String categoryNameKr, String categoryNameEng, String categoryColor, String categoryState) {
+        this.categoryNameKr = categoryNameKr;
+        this.categoryNameEng = categoryNameEng;
+        this.categoryColor = categoryColor;
+        this.categoryState = categoryState;
     }
 }

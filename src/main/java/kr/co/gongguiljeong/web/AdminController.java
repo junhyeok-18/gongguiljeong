@@ -32,7 +32,7 @@ public class AdminController {
         return "/admin/main";
     }
 
-    @GetMapping("/category/list")
+    @GetMapping("/category")
     public String categoryList(Model model) {
         model.addAttribute("category", categoryService.findAll());
 
@@ -43,7 +43,6 @@ public class AdminController {
     public String categorySave() {
         return "/admin/category/category-save";
     }
-
 
     @GetMapping("/category/update/{category_code}")
     public String postsUpdate(@PathVariable Long category_code, Model model) {

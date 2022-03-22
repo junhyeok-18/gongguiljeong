@@ -70,6 +70,7 @@ public class OAuthAttributes {
                 .userName((String) kakaoProfile.get("nickname"))
                 .userEmail((String) kakaoAccount.get("email"))
                 .userProfileImage((String) kakaoProfile.get("profile_image_url"))
+                .userNotification("N") //user_notification 기본 값 넣기
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
                 .build();

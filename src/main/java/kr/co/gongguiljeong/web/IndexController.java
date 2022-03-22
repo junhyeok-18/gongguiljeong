@@ -25,8 +25,6 @@ public class IndexController {
             model.addAttribute("userEmail", user.getUserEmail());
             model.addAttribute("userProfileImage", user.getUserProfileImage());
             model.addAttribute("userNotification", user.getUserNotification());
-
-            System.out.println("userNotification : " +  user.getUserNotification());
         }
 
         return "index";
