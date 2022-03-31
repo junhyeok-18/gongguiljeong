@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
+public interface ScheduleListRepository extends JpaRepository<ScheduleList, Long> {
     /*@Query(value = "SELECT " +
             "gs.schedule_code as schedule_code, " +
             "gs.schedule_registered_person as schedule_registered_person, " +
@@ -29,6 +29,6 @@ public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
             "join influencer gi on gs.schedule_influencer = gi.influencer_code " +
             "where gs.schedule_state = 'Y' " +
             "ORDER BY gs.schedule_code", nativeQuery = true)*/
-    //@Query("SELECT s, c, b, i FROM Schedule s JOIN FETCH s.category c JOIN FETCH s.brand b JOIN FETCH s.influencer i")
-    //List<Schedule> scheduleList();
+    @Query("SELECT s, c, b, i FROM ScheduleList s JOIN FETCH s.category c JOIN FETCH s.brand b JOIN FETCH s.influencer i")
+    List<ScheduleList> scheduleList();
 }

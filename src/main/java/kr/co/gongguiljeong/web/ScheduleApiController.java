@@ -1,5 +1,8 @@
 package kr.co.gongguiljeong.web;
 
+import kr.co.gongguiljeong.domain.brand.Brand;
+import kr.co.gongguiljeong.domain.category.Category;
+import kr.co.gongguiljeong.domain.influencer.Influencer;
 import kr.co.gongguiljeong.service.schedule.ScheduleService;
 import kr.co.gongguiljeong.web.dto.schedule.ScheduleListResponseDto;
 import kr.co.gongguiljeong.web.dto.schedule.ScheduleResponseDto;
@@ -38,7 +41,7 @@ public class ScheduleApiController {
     }
 
     @GetMapping("/api/admin/schedule/list")
-    public List<ScheduleListResponseDto> findAll() {
-        return scheduleService.findAll();
+    public List<ScheduleListResponseDto> scheduleList() {
+        return scheduleService.scheduleList();
     }
 }

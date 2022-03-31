@@ -9,13 +9,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.Collection;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Schedule extends BaseTimeEntity {
+@Table(name = "schedule")
+public class ScheduleList extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +23,7 @@ public class Schedule extends BaseTimeEntity {
     @Column(nullable = false)
     private String scheduleRegisteredPerson;
 
-    /*@OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "scheduleCategory")
     private Category category;
 
@@ -34,16 +33,16 @@ public class Schedule extends BaseTimeEntity {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "scheduleInfluencer")
-    private Influencer influencer;*/
+    private Influencer influencer;
 
-    @Column(nullable = false)
+/*    @Column(nullable = false)
     private String scheduleCategory;
 
     @Column(nullable = false)
     private String scheduleBrand;
 
     @Column(nullable = false)
-    private String scheduleInfluencer;
+    private String scheduleInfluencer;*/
 
     @Column(nullable = false)
     private String scheduleStartDate;
@@ -55,33 +54,33 @@ public class Schedule extends BaseTimeEntity {
     private String scheduleState;
 
     @Builder
-    public Schedule(String scheduleRegisteredPerson,
-                    String scheduleCategory, String scheduleBrand, String scheduleInfluencer,
-                    //Category category, Brand brand, Influencer influencer,
+    public ScheduleList(String scheduleRegisteredPerson,
+                    //String scheduleCategory, String scheduleBrand, String scheduleInfluencer,
+                    Category category, Brand brand, Influencer influencer,
                     String scheduleStartDate, String scheduleEndDate, String scheduleState) {
         this.scheduleRegisteredPerson = scheduleRegisteredPerson;
-        this.scheduleCategory = scheduleCategory;
-        this.scheduleBrand = scheduleBrand;
-        this.scheduleInfluencer = scheduleInfluencer;
-        /*this.category = category;
+        //this.scheduleCategory = scheduleCategory;
+        //this.scheduleBrand = scheduleBrand;
+        //this.scheduleInfluencer = scheduleInfluencer;
+        this.category = category;
         this.brand = brand;
-        this.influencer = influencer;*/
+        this.influencer = influencer;
         this.scheduleStartDate = scheduleStartDate;
         this.scheduleEndDate = scheduleEndDate;
         this.scheduleState = scheduleState;
     }
 
     public void update(String scheduleRegisteredPerson,
-                       String scheduleCategory, String scheduleBrand, String scheduleInfluencer,
-                       //Category category, Brand brand, Influencer influencer,
+                       //String scheduleCategory, String scheduleBrand, String scheduleInfluencer,
+                       Category category, Brand brand, Influencer influencer,
                        String scheduleStartDate, String scheduleEndDate, String scheduleState) {
         this.scheduleRegisteredPerson = scheduleRegisteredPerson;
-        this.scheduleCategory = scheduleCategory;
-        this.scheduleBrand = scheduleBrand;
-        this.scheduleInfluencer = scheduleInfluencer;
-        /*this.category = category;
+        //this.scheduleCategory = scheduleCategory;
+        //this.scheduleBrand = scheduleBrand;
+        //this.scheduleInfluencer = scheduleInfluencer;
+        this.category = category;
         this.brand = brand;
-        this.influencer = influencer;*/
+        this.influencer = influencer;
         //this.category = scheduleCategory;
         //this.brand = brand;
         //this.influencer = influencer;

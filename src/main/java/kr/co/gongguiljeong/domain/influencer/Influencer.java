@@ -1,11 +1,14 @@
 package kr.co.gongguiljeong.domain.influencer;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import kr.co.gongguiljeong.domain.BaseTimeEntity;
+import kr.co.gongguiljeong.domain.schedule.Schedule;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
