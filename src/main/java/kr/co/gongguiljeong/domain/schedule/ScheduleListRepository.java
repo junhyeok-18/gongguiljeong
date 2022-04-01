@@ -1,7 +1,9 @@
 package kr.co.gongguiljeong.domain.schedule;
 
+import org.hibernate.annotations.Parameter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -29,6 +31,19 @@ public interface ScheduleListRepository extends JpaRepository<ScheduleList, Long
             "join influencer gi on gs.schedule_influencer = gi.influencer_code " +
             "where gs.schedule_state = 'Y' " +
             "ORDER BY gs.schedule_code", nativeQuery = true)*/
-    @Query("SELECT s, c, b, i FROM ScheduleList s JOIN FETCH s.category c JOIN FETCH s.brand b JOIN FETCH s.influencer i")
+    @Query("SELECT s, c, b, i FROM ScheduleList s " +
+            "JOIN FETCH s.category c " +
+            "JOIN FETCH s.brand b " +
+            "JOIN FETCH s.influencer i " +
+            "ORDER BY s.scheduleStartDate")
     List<ScheduleList> scheduleList();
+
+    @Query("SELECT s, c, b, i FROM ScheduleList s " +
+            "JOIN FETCH s.category c " +
+            "JOIN FETCH s.brand b " +
+            "JOIN FETCH s.influencer i " +
+            "where s.scheduleState = 'Y' " +
+            "AND (SUBSTRING(s.scheduleStartDate, 1, 6) = :scheduleDate OR SUBSTRING(s.scheduleEndDate, 1, 6) = :scheduleDate) " +
+            "ORDER BY s.scheduleStartDate")
+    List<ScheduleList> mainSchedule(@Param("scheduleDate") String scheduleDate);
 }

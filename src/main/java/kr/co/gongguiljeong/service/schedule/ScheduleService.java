@@ -67,4 +67,11 @@ public class ScheduleService {
                 .map(ScheduleListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<ScheduleListResponseDto> mainSchedule(String scheduleDate) {
+        return scheduleListRepository.mainSchedule(scheduleDate).stream()
+                .map(ScheduleListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

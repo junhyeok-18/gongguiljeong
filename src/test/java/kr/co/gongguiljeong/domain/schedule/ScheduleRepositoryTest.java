@@ -110,14 +110,14 @@ public class ScheduleRepositoryTest {
                 .build());
 
         //when
-        List<Schedule> scheduleList = scheduleListRepository.scheduleList();
+        List<ScheduleList> scheduleList = scheduleListRepository.scheduleList();
 
         //then
-        Schedule schedule = scheduleList.get(0);
+        ScheduleList schedule = scheduleList.get(0);
         assertThat(schedule.getScheduleRegisteredPerson()).isEqualTo(scheduleRegisteredPerson);
-        assertThat(schedule.getScheduleCategory()).isEqualTo(scheduleCategory);
-        assertThat(schedule.getScheduleBrand()).isEqualTo(scheduleBrand);
-        assertThat(schedule.getScheduleInfluencer()).isEqualTo(scheduleInfluencer);
+        assertThat(schedule.getCategory().getCategoryCode()).isEqualTo(scheduleCategory);
+        assertThat(schedule.getBrand().getBrandCode()).isEqualTo(scheduleBrand);
+        assertThat(schedule.getInfluencer().getInfluencerCode()).isEqualTo(scheduleInfluencer);
         assertThat(schedule.getScheduleStartDate()).isEqualTo(scheduleStartDate);
         assertThat(schedule.getScheduleEndDate()).isEqualTo(scheduleEndDate);
         assertThat(schedule.getScheduleState()).isEqualTo(scheduleState);

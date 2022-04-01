@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.co.gongguiljeong.domain.influencer.Influencer;
 import kr.co.gongguiljeong.domain.influencer.InfluencerRepository;
 import kr.co.gongguiljeong.domain.schedule.Schedule;
+import kr.co.gongguiljeong.domain.schedule.ScheduleList;
+import kr.co.gongguiljeong.domain.schedule.ScheduleListRepository;
 import kr.co.gongguiljeong.domain.schedule.ScheduleRepository;
 import kr.co.gongguiljeong.web.dto.influencer.InfluencerSaveRequestDto;
 import kr.co.gongguiljeong.web.dto.influencer.InfluencerUpdateRequestDto;
@@ -44,6 +46,9 @@ public class ScheduleApiControllerTest {
 
     @Autowired
     private ScheduleRepository scheduleRepository;
+
+    @Autowired
+    private ScheduleListRepository scheduleListRepository;
 
     @Autowired
     private WebApplicationContext context;
@@ -94,7 +99,7 @@ public class ScheduleApiControllerTest {
                 .andExpect(status().isOk());
 
         //then
-        List<Schedule> all = scheduleRepository.findAll();
+        List<ScheduleList> all = scheduleListRepository.findAll();
         assertThat(all.get(0).getScheduleRegisteredPerson()).isEqualTo(scheduleRegisteredPerson);
         assertThat(all.get(0).getCategory().getCategoryCode()).isEqualTo(scheduleCategory);
         assertThat(all.get(0).getBrand().getBrandCode()).isEqualTo(scheduleBrand);
@@ -154,7 +159,7 @@ public class ScheduleApiControllerTest {
                 .andExpect(status().isOk());
 
         //then
-        List<Schedule> all = scheduleRepository.findAll();
+        List<ScheduleList> all = scheduleListRepository.findAll();
         assertThat(all.get(0).getScheduleRegisteredPerson()).isEqualTo(expectedscheduleRegisteredPerson);
         assertThat(all.get(0).getCategory().getCategoryCode()).isEqualTo(expectedscheduleCategory);
         assertThat(all.get(0).getBrand().getBrandCode()).isEqualTo(expectedscheduleBrand);

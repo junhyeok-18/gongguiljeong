@@ -44,4 +44,9 @@ public class ScheduleApiController {
     public List<ScheduleListResponseDto> scheduleList() {
         return scheduleService.scheduleList();
     }
+
+    @GetMapping("/api/user/schedule/list")
+    public List<ScheduleListResponseDto> mainSchedule(String scheduleDate) {
+        return scheduleService.mainSchedule(scheduleDate);
+    }
 }
