@@ -80,10 +80,6 @@ html, body {
   height: 100%;
 }
 
-a {
-    text-decoration: none;
-}
-
 .div-main {
   margin: auto;
   width: 100%;
@@ -155,12 +151,10 @@ a {
 
 @keyframes fadeInLeft {
   0% {
-    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
 
   to {
-    -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
 }
@@ -172,7 +166,6 @@ a {
   position: absolute;
   top: 0;
   z-index: 999;
-  -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
   display: none;
 }
@@ -187,9 +180,7 @@ a {
   margin: 0;
   padding: 0;
   z-index: -9999;
-  -webkit-transition-property: opacity;
   transition-property: opacity;
-  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
@@ -216,7 +207,7 @@ a {
 }
 
 .img-logo {
-  width: 20%;
+  width: 25%;
   margin: auto;
   display: block;
 }
@@ -230,7 +221,7 @@ a {
 }
 
 .div-profile {
-  width: 25%;
+  width: 30%;
   height: 100%;
   float: left;
 }
@@ -335,14 +326,14 @@ a {
   left: 10%; 
   top: 15%; 
   background-color: #fff; 
-  -webkit-transition: .4s;
+  -webkit-transition: .5s; 
   transition: .4s; 
   border-radius: 50%; 
 } 
 
 .switch-button input:checked + .onoff-switch { 
-  background-color: #D548EB;
-  box-shadow: inset 1px 5px 1px #BD45EE;
+  background-color: #D548EB; 
+  box-shadow: inset 1px 5px 1px #BD45EE; 
 } 
 
 .switch-button input:checked + .onoff-switch:before { 
@@ -352,6 +343,14 @@ a {
 }
 /** 토글 버튼 css 종료 */
 
+.tui-full-calendar-weekday-schedule-title2 {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 3px;
+  font-size: 1.3rem;
+}
 
 
 

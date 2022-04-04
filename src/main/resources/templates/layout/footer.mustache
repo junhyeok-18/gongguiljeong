@@ -6,7 +6,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.13/chance.min.js"></script>
 <script src="/js/calendar/tui-calendar.js"></script>
 <script src="/js/calendar/calendars.js"></script>
-<script src="/js/calendar/schedules.js"></script>
 <script type="text/javascript">
     var MONTHLY_CUSTOM_THEME = {
       'common.border': '1px solid #e5e5e5',
@@ -37,29 +36,106 @@
       'month.day.fontSize': '1.4rem', //날짜 글자 크기
 
       // month schedule style
-      'month.schedule.borderRadius': '2px',
-      'month.schedule.height': '24px',
+      'month.schedule.borderRadius': '0px',
+      'month.schedule.height': '22px',
       'month.schedule.marginTop': '2px',
-      'month.schedule.marginLeft': '8px',
-      'month.schedule.marginRight': '8px',
-
-      // month more view
-      'month.moreView.border': '1px solid #d5d5d5',
-      'month.moreView.boxShadow': '0 2px 6px 0 rgba(0, 0, 0, 0.1)',
-      'month.moreView.backgroundColor': 'white',
-      'month.moreView.paddingBottom': '17px',
-      'month.moreViewTitle.height': '44px',
-      'month.moreViewTitle.marginBottom': '12px',
-      'month.moreViewTitle.backgroundColor': 'inherit',
-      'month.moreViewTitle.borderBottom': 'none',
-      'month.moreViewTitle.padding': '12px 17px 0 17px',
-      'month.moreViewList.padding': '0 17px',
+      'month.schedule.marginLeft': '0px',
+      'month.schedule.marginRight': '0px',
     };
 
     var cal = new tui.Calendar('#calendar', {
       defaultView: 'month',
       theme: MONTHLY_CUSTOM_THEME // set theme
     });
+
+    cal.setCalendars([
+      {
+        id: 'Major Subject',
+        name: '전공 필수',
+        color: '#ffffff',
+        bgColor: '#ff5583',
+        dragBgColor: '#ff5583',
+        borderColor: '#ff5583'
+      },
+      {
+        id: 'Elective Subject',
+        name: '전공 선택',
+        color: '#ffffff',
+        bgColor: '#ffbb3b',
+        dragBgColor: '#ffbb3b',
+        borderColor: '#ffbb3b'
+      },
+      {
+        id: 'General Subject',
+        name: '일반 교양',
+        color: '#ffffff',
+        bgColor: '#03bd9e',
+        dragBgColor: '#03bd9e',
+        borderColor: '#03bd9e'
+      }
+    ]);
+
+    var schedules = [
+      {
+        id: '1',
+        calendarId: 'Major Subject',
+        title: '자료구조론',
+        category: 'allday',              // 일반 일정
+        start: '2022-04-18T10:00',
+        end: '2022-04-20T11:00'
+      },
+      {
+        id: '2',
+        calendarId: 'Elective Subject',
+        title: '웹 프로그래밍',
+        category: 'allday',
+        start: '2022-04-18T14:00:00',
+        end: '2022-04-18T15:00:00'
+      },
+      {
+        id: '3',
+        calendarId: 'General Subject',
+        title: '영양과 건강',
+        category: 'allday',
+        start: '2022-04-18T13:00:00',
+        end: '2022-04-18T14:00:00'
+      }];
+
+    cal.clear();
+    cal.createSchedules(schedules, true);
+    cal.render();
+
+    //userNotification에 따른 체크박스 On / Off
+    //const userCode = document.getElementById('userCode').value;
+    //const userNotification = document.getElementById('userNotification').value;
+
+    /*function userNotification() {
+      switch(userNotification) {
+        case 'Y' : //카카오톡 알림 O
+
+          break;
+
+        case 'N' : //카카오톡 알림 X
+          break;
+
+        case '1' : //카카오톡 하루 전 알림만
+          break;
+
+        case '2' : //카카오톡 10분 전 알림만
+          break;
+
+        case '3' : //카카오톡 하루 전, 10분 전 둘다 알림
+          break;
+      }
+    }*/
+
+    window.onload = function() {
+      //달력 클릭
+      $('.tui-full-calendar-near-month-day').on('click', function () {
+        var date = (today.text().replace('.', '')) + (this.innerText < 10 ? '0'+this.innerText : this.innerText);
+        alert(date);
+      });
+    }
 
     //사이드바 버튼 클릭
     $('#btn-sidebar').on('click', function () {
@@ -159,7 +235,7 @@
       } else { //기본 터치
       }
     }
-</script>
+  </script>
 <script src="/js/calendar/default.js"></script>
 </body>
 </html>

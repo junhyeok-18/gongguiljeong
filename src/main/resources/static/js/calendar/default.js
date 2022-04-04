@@ -3,7 +3,7 @@ function init() {
   cal.setCalendars(CalendarList);
 
   setRenderRangeText();
-  setSchedules();
+  //setSchedules();
   setEventListener();
 }
 
@@ -115,7 +115,7 @@ function onClickNavi(e) {
   }
 
   setRenderRangeText();
-  setSchedules();
+  //setSchedules();
 }
 
 function setRenderRangeText() {
@@ -136,12 +136,12 @@ function setRenderRangeText() {
   renderRange.innerHTML = html.join('');
 }
 
-function setSchedules() {
+/* function setSchedules() {
   cal.clear();
   generateSchedule(cal.getViewName(), cal.getDateRangeStart(), cal.getDateRangeEnd());
   cal.createSchedules(ScheduleList);
   refreshScheduleVisibility();
-}
+} */
 
 
 function refreshScheduleVisibility() {

@@ -1617,7 +1617,7 @@ exports.COMPILER_REVISION = COMPILER_REVISION;
 var LAST_COMPATIBLE_COMPILER_REVISION = 7;
 
 exports.LAST_COMPATIBLE_COMPILER_REVISION = LAST_COMPATIBLE_COMPILER_REVISION;
-var REVISION_CHANGES = {
+var REVISION_CwnsdpGES = {
   1: '<= 1.0.rc.2', // 1.0.rc.2 is actually rev2 but doesn't report it
   2: '== 1.0.0-rc.3',
   3: '== 1.0.0-rc.4',
@@ -1628,7 +1628,7 @@ var REVISION_CHANGES = {
   8: '>= 4.3.0'
 };
 
-exports.REVISION_CHANGES = REVISION_CHANGES;
+exports.REVISION_CwnsdpGES = REVISION_CwnsdpGES;
 var objectType = '[object Object]';
 
 function HandlebarsEnvironment(helpers, partials, decorators) {
@@ -2594,8 +2594,8 @@ function checkRevision(compilerInfo) {
   }
 
   if (compilerRevision < _base.LAST_COMPATIBLE_COMPILER_REVISION) {
-    var runtimeVersions = _base.REVISION_CHANGES[currentRevision],
-        compilerVersions = _base.REVISION_CHANGES[compilerRevision];
+    var runtimeVersions = _base.REVISION_CwnsdpGES[currentRevision],
+        compilerVersions = _base.REVISION_CwnsdpGES[compilerRevision];
     throw new _exception2['default']('Template was precompiled with an older version of Handlebars than the current runtime. ' + 'Please update your precompiler to a newer version (' + runtimeVersions + ') or downgrade your runtime to an older version (' + compilerVersions + ').');
   } else {
     // Use the embedded version info since the runtime doesn't know about this revision yet
@@ -12611,13 +12611,13 @@ var TimeCreation = __webpack_require__(/*! ../handler/time/creation */ "./src/js
 var TimeMove = __webpack_require__(/*! ../handler/time/move */ "./src/js/handler/time/move.js");
 var TimeResize = __webpack_require__(/*! ../handler/time/resize */ "./src/js/handler/time/resize.js");
 
-var DAYGRID_HANDLDERS = {
+var DAYGRID_wnsdpDLDERS = {
     'click': DayGridClick,
     'creation': DayGridCreation,
     'move': DayGridMove,
     'resize': DayGridResize
 };
-var TIMEGRID_HANDLERS = {
+var TIMEGRID_wnsdpDLERS = {
     'click': TimeClick,
     'creation': TimeCreation,
     'move': TimeMove,
@@ -12772,7 +12772,7 @@ module.exports = function(baseController, layoutContainer, dragHandler, options,
             util.forEach(handlers, function(type) {
                 if (!options.isReadOnly || type === 'click') {
                     weekView.handler[type][name] =
-                        new DAYGRID_HANDLDERS[type](dragHandler, view, baseController, options);
+                        new DAYGRID_wnsdpDLDERS[type](dragHandler, view, baseController, options);
                     view.addHandler(type, weekView.handler[type][name], vLayout.getPanelByName(name));
                 }
             });
@@ -12785,7 +12785,7 @@ module.exports = function(baseController, layoutContainer, dragHandler, options,
             util.forEach(handlers, function(type) {
                 if (!options.isReadOnly || type === 'click') {
                     weekView.handler[type][name] =
-                        new TIMEGRID_HANDLERS[type](dragHandler, view, baseController, options);
+                        new TIMEGRID_wnsdpDLERS[type](dragHandler, view, baseController, options);
                 }
             });
 
@@ -24116,7 +24116,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
     + alias2(((helper = (helper = lookupProperty(helpers,"CSS_PREFIX") || (depth0 != null ? lookupProperty(depth0,"CSS_PREFIX") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"CSS_PREFIX","hash":{},"data":data,"loc":{"start":{"line":14,"column":92},"end":{"line":14,"column":106}}}) : helper)))
     + "weekday-schedule "
     + ((stack1 = lookupProperty(helpers,"if").call(alias3,((stack1 = (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? lookupProperty(stack1,"isFocused") : stack1),{"name":"if","hash":{},"fn":container.program(11, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":14,"column":123},"end":{"line":14,"column":192}}})) != null ? stack1 : "")
-    + "\"\n             style=\"height:"
+    + "\"\n             style=\"cursor: default; height:"
     + alias2(alias1(((stack1 = (data && lookupProperty(data,"root"))) && lookupProperty(stack1,"scheduleHeight")), depth0))
     + "px; line-height:"
     + alias2(alias1(((stack1 = (data && lookupProperty(data,"root"))) && lookupProperty(stack1,"scheduleHeight")), depth0))
@@ -24130,7 +24130,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? lookupProperty(stack1,"customStyle") : stack1), depth0))
     + "\">\n            <span class=\""
     + alias2(((helper = (helper = lookupProperty(helpers,"CSS_PREFIX") || (depth0 != null ? lookupProperty(depth0,"CSS_PREFIX") : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias3,{"name":"CSS_PREFIX","hash":{},"data":data,"loc":{"start":{"line":28,"column":25},"end":{"line":28,"column":39}}}) : helper)))
-    + "weekday-schedule-title\"\n                  data-title=\""
+    + "weekday-schedule-title2\"\n                  data-title=\""
     + alias2(alias1(((stack1 = (depth0 != null ? lookupProperty(depth0,"model") : depth0)) != null ? lookupProperty(stack1,"title") : stack1), depth0))
     + "\">"
     + ((stack1 = (lookupProperty(helpers,"allday-tmpl")||(depth0 && lookupProperty(depth0,"allday-tmpl"))||alias4).call(alias3,(depth0 != null ? lookupProperty(depth0,"model") : depth0),{"name":"allday-tmpl","hash":{},"data":data,"loc":{"start":{"line":29,"column":47},"end":{"line":29,"column":70}}})) != null ? stack1 : "")
@@ -24207,7 +24207,7 @@ module.exports = (Handlebars['default'] || Handlebars).template({"1":function(co
 
   return "<span class=\""
     + alias1(((helper = (helper = lookupProperty(helpers,"CSS_PREFIX") || (depth0 != null ? lookupProperty(depth0,"CSS_PREFIX") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"CSS_PREFIX","hash":{},"data":data,"loc":{"start":{"line":30,"column":75},"end":{"line":30,"column":89}}}) : helper)))
-    + "weekday-resize-handle handle-y\" style=\"line-height: "
+    + "weekday-resize-handle handle-y2\" style=\"line-height: "
     + alias1(container.lambda(((stack1 = (data && lookupProperty(data,"root"))) && lookupProperty(stack1,"scheduleHeight")), depth0))
     + "px;\">&nbsp;</span>";
 },"23":function(container,depth0,helpers,partials,data) {
@@ -28558,3 +28558,4 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_tui_date_picker__;
 
 /******/ });
 });
+//# sourceMappingURL=tui-calendar.js.map
